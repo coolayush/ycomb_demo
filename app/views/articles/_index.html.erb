@@ -1,0 +1,8 @@
+<ul class = "no-bullets">
+  <% @articles.each do |a| %>
+    <li>
+      <h3> <%= a.heading %> </h3>
+      <p> <%= time_ago_in_words a.created_at %> ago</p> 
+    </li>
+  <% end%>
+</ul>
