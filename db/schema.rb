@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20150901092707) do
 
   create_table "articles", force: :cascade do |t|
-    t.string   "heading"
-    t.text     "discription"
+    t.string   "title"
     t.string   "url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "likes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
       @article = Article.create(@article_attributes)
     else
       @article = Article.new
-      @article.errors.add(:url, "Invalid url")
+      @article.errors.add(:url, "Invalid")
     end
   end
 
@@ -66,7 +66,7 @@ class ArticlesController < ApplicationController
         @article_attributes = 
         {
           url: url,
-          heading: Article.get_title(url) 
+          title: Article.get_title(url) 
         }
       end
     end

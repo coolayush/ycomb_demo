@@ -1,11 +1,12 @@
-$("ul.errors").html("")
+$(".error").html("")
+$(".notice").html("")
 <% if @article.errors.any? %>
-  <
   <% @article.errors.full_messages.each do |message| %>
-    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+    $(".error").append($("<div />").html("<%= message.html_safe %>"))
     $("#article-modal").modal("hide")
   <% end %>
 <% else %>
   $(".article-index").html("<%= escape_javascript(render 'index') %>")
+  $(".notice").append($("<div />").html("<%= 'Sucessfully created article' %>"))
   $("#article-modal").modal("hide")
 <% end %>
