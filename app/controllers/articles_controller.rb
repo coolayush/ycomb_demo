@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
   def create
     @articles = Article.reverse_chrono
     if @article_attributes
-      @article = Article.create(@attributes)
+      @article = Article.create(@article_attributes)
     else
       @article = Article.new
       @article.errors.add(:url, "Invalid url")
