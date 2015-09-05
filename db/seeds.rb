@@ -20,28 +20,28 @@ ArticleUrls =
   "http://www.physicsoftheuniverse.com/facts.html"
 ]
 
-Article.destroy_all
+# Article.destroy_all
 
 ArticleUrls.each do |url|
   title = Article.get_title(url)
-  Article.create!(url: url, title: title)
+  Article.create(url: url, title: title)
 end
 
-User.destroy_all
-100.times do |n|
-  articles = Article.all
-  email = "example-#{n+1}@ycomb.org"
-  password = "password"
-  user = User.create(
-    email: email,
-    password:              password,
-    password_confirmation: password,
-  )
-  5.times do 
-    a = articles.sample
-    user.articles << a
-    articles = articles.delete(a)
-  end
-  puts "#{n} completed......."
-end
+# User.destroy_all
+# 100.times do |n|
+#   articles = Article.all
+#   email = "example-#{n+1}@ycomb.org"
+#   password = "password"
+#   user = User.create(
+#     email: email,
+#     password:              password,
+#     password_confirmation: password,
+#   )
+#   5.times do 
+#     a = articles.sample
+#     user.articles << a
+#     articles = articles.delete(a)
+#   end
+#   puts "#{n} completed......."
+# end
 

@@ -52,7 +52,7 @@ class ArticlesController < ApplicationController
   private
 
   def initiate_article_listing
-    @articles = Article.reverse_chrono
+    @articles = Article.reverse_chrono.paginate(page: params[:page])
     @articles_liked = current_user.articles if current_user
     @articles_liked ||= []
   end
