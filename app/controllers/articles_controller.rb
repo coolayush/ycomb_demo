@@ -35,6 +35,20 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def liked
+    @article = Article.find(params[:id])
+    unless current_user.articles.include?(@article)
+      current_user.articles << @article
+    end
+  end
+
+  def unliked
+    @article = Article.find(params[:id])
+    if current_user.articles.include?(@article)
+      current_user.articles.delete(@article)
+    end
+  end
+
   private
 
   def check_logged_in

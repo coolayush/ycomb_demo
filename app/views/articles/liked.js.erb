@@ -1,0 +1,2 @@
+$('<%= "#article_#{@article.id.to_s}" + " .like-element" %>').html("<%= escape_javascript(link_to 'unlike', unliked_article_path(@article), remote: true, method: :post) %>")
+$('<%= "#article_#{@article.id.to_s}" + " .like-count" %>').html("<%= pluralize(@article.users.count, 'like') %>")
