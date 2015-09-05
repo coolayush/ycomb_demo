@@ -5,7 +5,7 @@
 	      <h3> <%= link_to a.title, a.url, target: "_blank" %> </h3>
 	      <div>
 		      <p class="inline"> <%= time_ago_in_words a.created_at %> ago</p>
-		      <p class = "like-count inline"> <%= a.users.count.to_s  + " likes"%> </p>
+		      <p class = "like-count inline"> <%= pluralize(a.users.count, 'like') %> </p>
 		      <% if @articles_liked.include?(a) %>	
 			      <p class = "like-element inline"> <%= link_to "unlike", unliked_article_path(a), remote: true, method: :post %> </p>
 			    <% else %>
