@@ -75,6 +75,9 @@ header{
 
 .nav li a{
   color: whitesmoke;
+  &:hover{
+    color: black;
+  }
 }
 
 .container.container-body{

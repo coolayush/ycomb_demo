@@ -5,8 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.reverse_chrono
-    @articles_liked = current_user.articles 
+    initiate_article_listing 
   end
 
   # GET /articles/new
@@ -25,14 +24,14 @@ class ArticlesController < ApplicationController
       @article = Article.new(@article_attributes)
       if(@article.save)
         flash.now[:notice] = "Sucussfully added article"
-        @articles = Article.reverse_chrono
+        initiate_article_listing
       else
         flash.now[:error] = @article.errors.messages.values.join(" , ")  
         @article = nil
       end
     else
       @article = nil
-      flash.now[:error] = "Invalid Url"
+      flash.now[:error] = "Invalid Url (please make sure you provide the protocol with the url)"
     end
   end
 
@@ -51,6 +50,12 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def initiate_article_listing
+    @articles = Article.reverse_chrono
+    @articles_liked = current_user.articles if current_user
+    @articles_liked ||= []
+  end
 
   def check_logged_in
     unless current_user
