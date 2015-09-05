@@ -1,0 +1,28 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <%= form_tag sessions_path, remote: true, html: { style: "display:inline;" } do %>
+      
+      <div class="modal-body">
+        <div class="field">
+          <%= label_tag :email %><br>
+          <%= text_field_tag :email %>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="field">
+          <%= label_tag :password %><br>
+          <%= password_field_tag :password %>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <div class="actions">
+          <%= submit_tag "Log In", class: "btn btn-primary" %>
+          <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>

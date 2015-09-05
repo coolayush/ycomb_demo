@@ -10,8 +10,10 @@
 	background: #ffc0cb;	
 }
 
-.notice{
-	background: green;	
+.alert-notice{
+	background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;	
 }
 
 .article-button{
@@ -20,4 +22,24 @@
 
 .modal-header{
 	display: none;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.alert-error, .alert-alert{
+  background: #ffc0cb;
 }

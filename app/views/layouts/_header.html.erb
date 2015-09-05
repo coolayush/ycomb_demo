@@ -1,0 +1,15 @@
+<header class="">
+  <div class="container">
+    <%= link_to "YCOMB", '#', id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <li><%= link_to "Log Out",  log_out_path, class: "nav_sign_out", remote: true %></li>
+        <% else %>
+          <li><%= link_to "Log In", log_in_path, class: "nav_log_in", remote: true %></li>
+          <li><%= link_to "Sign Up",  sign_up_path, class: "nav_sign_up", remote: true %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

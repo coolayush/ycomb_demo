@@ -1,2 +1,6 @@
-$("#article-modal").html("<%= escape_javascript(render 'new') %>")
-$("#article-modal").modal("show")
+<% if current_user %>
+	$("#article-modal").html("<%= escape_javascript(render 'new') %>")
+	$("#article-modal").modal("show")
+<% else %>
+  window.location.replace('<%= "http://#{request.host_with_port + log_in_path}" %>');
+<% end %>

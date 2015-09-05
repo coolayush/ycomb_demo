@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <%= link_to 'New Article', new_article_path, remote: true, class: "btn btn-primary article-button" %>
 
-<div class="article-index"><%= render("index") %></div>
+<div class="article-index"><%= render("articles/index") %></div>
 
 <div id="article-modal" class="modal fade"></div>

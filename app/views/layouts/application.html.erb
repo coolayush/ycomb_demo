@@ -7,9 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="notice"></div>
-  <div class="error"></div>
-  <%= yield %>
+  <%= render "layouts/header" %>
+  <div class="container">
+    <div id= "flash-container">
+      <%= show_flash %>
+    </div>
+   <div class="notice"></div>
+   <div class="error"></div>
+	  <%= yield %>
+  </div>
 
 </body>
 </html>

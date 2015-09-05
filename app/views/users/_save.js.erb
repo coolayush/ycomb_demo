@@ -1,0 +1,6 @@
+$("#article-modal").modal("hide")
+<% if @user %>
+  window.location.replace("http://" + "<%= request.host_with_port %>")
+<% else %>
+  $("#flash-container").html("<%= escape_javascript(show_flash) %>")
+<% end %>

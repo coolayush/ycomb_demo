@@ -1,12 +1,5 @@
-$(".error").html("")
-$(".notice").html("")
-<% if @article.errors.any? %>
-  <% @article.errors.full_messages.each do |message| %>
-    $(".error").append($("<div />").html("<%= message.html_safe %>"))
-    $("#article-modal").modal("hide")
-  <% end %>
-<% else %>
-  $(".article-index").html("<%= escape_javascript(render 'index') %>")
-  $(".notice").append($("<div />").html("<%= 'Sucessfully created article' %>"))
-  $("#article-modal").modal("hide")
+$("#article-modal").modal("hide")
+<% if @article %>
+  $(".article-index").html("<%= escape_javascript(render 'articles/index') %>")
 <% end %>
+$("#flash-container").html("<%= escape_javascript(show_flash) %>")
