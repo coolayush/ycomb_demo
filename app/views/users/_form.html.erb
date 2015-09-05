@@ -3,7 +3,7 @@
     <%= form_for @user, remote: true, html: { style: "display:inline;" }   do |f| %>
       
       <div class="modal-body">
-        
+        <h3 class="center-align">Sign up</h3>
         <div class="field">
           <%= f.label :email %><br>
           <%= f.text_field :email %>
@@ -11,12 +11,12 @@
 
         <div class="field">
           <%= f.label :password %><br>
-          <%= f.text_field :password %>
+          <%= f.password_field :password %>
         </div>
 
         <div class="field">
           <%= f.label :password_confirmation %><br>
-          <%= f.text_field :password_confirmation %>
+          <%= f.password_field :password_confirmation %>
         </div>
 
       </div>

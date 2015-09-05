@@ -2,12 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+*{
+  text-decoration: none !important;
+}
+
 .no-bullets{
 	list-style-type: none;
 }
 
 .error{
 	background: #ffc0cb;	
+}
+
+header{
+  background-color: #456892;
+}
+
+.input-field{
+  width: 100%;
 }
 
 .alert-notice{
@@ -17,11 +29,17 @@
 }
 
 .article-button{
-	margin-left: 35px;
+  margin-top: 10px;
+	margin-left: 45px;
+  background-color: #337B1F !important;
 }
 
 .modal-header{
 	display: none;
+}
+
+.modal-footer{
+  border: none !important;
 }
 
 #logo {
@@ -33,6 +51,7 @@
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  margin-top: 5px;
 }
 
 #logo:hover {
@@ -42,4 +61,27 @@
 
 .alert-error, .alert-alert{
   background: #ffc0cb;
+}
+
+.center-align{
+  text-align: center;
+}
+
+.inline{
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.nav li a{
+  color: whitesmoke;
+}
+
+.container.container-body{
+  padding-left: 0px;
+  margin-left: 30px;
+}
+
+.like-element a{
+  color: blue;
 }

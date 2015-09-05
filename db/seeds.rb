@@ -17,13 +17,31 @@ ArticleUrls =
   "http://www.telegraph.co.uk/news/science/6546462/The-10-weirdest-physics-facts-from-relativity-to-quantum-physics.html",
   "http://physics-lovers.blogspot.in/2010/02/interesting-facts-of-physics.html",
   "http://whatthafact.com/interesting-facts-about-physics/",
-  "http://www.physicsoftheuniverse.com/facts.html",
-  "http://topyaps.com/top-10-mind-blowing-facts-about-physics"
+  "http://www.physicsoftheuniverse.com/facts.html"
 ]
 
 Article.destroy_all
 
 ArticleUrls.each do |url|
   title = Article.get_title(url)
-  Article.create(url: url, title: title)
+  Article.create!(url: url, title: title)
 end
+
+User.destroy_all
+100.times do |n|
+  articles = Article.all
+  email = "example-#{n+1}@ycomb.org"
+  password = "password"
+  user = User.create(
+    email: email,
+    password:              password,
+    password_confirmation: password,
+  )
+  5.times do 
+    a = articles.sample
+    user.articles << a
+    articles = articles.delete(a)
+  end
+  puts "#{n} completed......."
+end
+

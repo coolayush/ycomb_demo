@@ -1,11 +1,11 @@
 <div class="modal-dialog">
   <div class="modal-content">
     <%= form_for @article, remote: true, html: { style: "display:inline;" }   do |f| %>
-      
+      <h3 class="center-align">New Article</h3>
       <div class="modal-body">
         <div class="field">
           <%= f.label :url %><br>
-          <%= f.text_field :url %>
+          <%= f.text_field :url, class: "input-field" %>
         </div>
       </div>
       

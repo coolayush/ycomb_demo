@@ -3,6 +3,7 @@
     <%= form_tag sessions_path, remote: true, html: { style: "display:inline;" } do %>
       
       <div class="modal-body">
+        <h3 class="center-align">Log In</h3>
         <div class="field">
           <%= label_tag :email %><br>
           <%= text_field_tag :email %>
@@ -15,6 +16,10 @@
           <%= password_field_tag :password %>
         </div>
       </div>
+
+      <h3 class="center-align">
+        or <%= link_to "SIGN UP", new_user_path, format: :js, remote: true %>
+      </h3>
       
       <div class="modal-footer">
         <div class="actions">

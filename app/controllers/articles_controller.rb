@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.reverse_chrono
+    @articles_liked = current_user.articles 
   end
 
   # GET /articles/new
